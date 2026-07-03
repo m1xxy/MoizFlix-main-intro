@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Moizflix - The Ultimate Streaming Experience</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            DEFAULT: '#ff2a55',
+                            hover: '#ff0033',
+                            dark: '#cc1c3f'
+                        },
+                        dark: {
+                            900: '#0f0f13',
+                            800: '#18181c',
+                            700: '#27272c'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0f0f13;
+            color: #ffffff;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .text-gradient {
+            background: linear-gradient(90deg, #ff2a55, #ff5e62);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glow-btn {
+            box-shadow: 0 0 20px rgba(255, 42, 85, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .glow-btn:hover {
+            box-shadow: 0 0 30px rgba(255, 42, 85, 0.6);
+            transform: translateY(-2px);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating-icon {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Glassmorphism cards */
+        .glass-card {
+            background: rgba(24, 24, 28, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #ff2a55, #ff5e62);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="relative">
+
+    <!-- Background Elements -->
+    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-brand/20 blur-[120px] rounded-full"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-500/10 blur-[120px] rounded-full"></div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="fixed top-0 w-full z-50 glass-card border-b-0 border-white/5">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="#ff2a55"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <span class="font-extrabold text-2xl tracking-tight">Moizflix</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-300">
+                <a href="#about" class="hover:text-white transition-colors">What is it?</a>
+                <a href="#apk-guide" class="hover:text-white transition-colors">Install App</a>
+                <a href="#setup" class="hover:text-white transition-colors">Ad-Free Setup</a>
+            </nav>
+            <button onclick="visitWebsite()" class="bg-brand hover:bg-brand-hover text-white font-bold py-2.5 px-6 rounded-full text-sm transition-colors shadow-[0_4px_14px_0_rgba(255,42,85,0.39)]">
+                Launch Web App
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="pt-32 pb-16 px-6 max-w-6xl mx-auto flex flex-col items-center text-center mt-10 md:mt-16">
+        <div class="inline-block mb-4 px-4 py-1.5 rounded-full glass-card border-brand/30 text-brand text-xs font-bold tracking-wide uppercase">
+            🚀 The New Streaming Experience
+        </div>
+        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+            Unlimited Streaming.<br>
+            <span class="text-gradient">Anywhere, Anytime.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-400 max-w-2xl mb-10 leading-relaxed font-medium">
+            Moizflix is a powerful web-based streaming platform. Watch your favorite Hollywood, Bollywood, and Regional movies instantly from your browser, or download our Android App!
+        </p>
+        
+        <!-- BUTTONS CONTAINER -->
+        <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-4 w-full">
+            <button onclick="visitWebsite()" class="glow-btn bg-brand text-white font-bold text-lg py-4 px-10 rounded-full flex items-center justify-center gap-2">
+                Visit Moizflix Web
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            
+            <!-- DOWNLOAD APK BUTTON (MediaFire Link) -->
+            <a href="https://www.mediafire.com/file/sp22qflpdu71a4i/MoizFlix.apk/file" target="_blank" class="glass-card text-white font-bold text-lg py-4 px-8 rounded-full flex items-center justify-center gap-2 hover:bg-white/10 transition-colors border border-white/20">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                Download APK
+            </a>
+
+            <a href="#setup" class="glass-card text-white font-bold text-lg py-4 px-8 rounded-full flex items-center justify-center gap-2 hover:bg-white/5 transition-colors border border-white/10">
+                Setup Ad-Free <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+            </a>
+        </div>
+    </main>
+
+    <!-- Video / Preview Mockup -->
+    <div id="about" class="max-w-5xl mx-auto px-6 pb-20 relative">
+        <div class="aspect-video bg-dark-800 rounded-3xl border border-white/10 shadow-2xl overflow-hidden relative flex items-center justify-center group">
+            <!-- Simulated App UI inside -->
+            <div class="absolute inset-0 opacity-40 bg-[url('https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/60 to-transparent"></div>
+            
+            <button onclick="visitWebsite()" class="relative z-10 w-20 h-20 bg-brand rounded-full flex items-center justify-center floating-icon shadow-[0_0_30px_rgba(255,42,85,0.5)] group-hover:scale-110 transition-transform">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="white" class="ml-1"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- App Installation Guide Section -->
+    <section id="apk-guide" class="py-16 max-w-5xl mx-auto px-6 relative z-10">
+        <div class="glass-card rounded-3xl p-8 md:p-12 border border-brand/20 relative overflow-hidden shadow-2xl">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-brand/10 blur-[80px] rounded-full pointer-events-none"></div>
+            
+            <h2 class="text-2xl md:text-4xl font-bold mb-8 flex items-center gap-3">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff2a55" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                How to Install the Android App
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-10 items-start">
+                <!-- Instructions -->
+                <div class="space-y-6">
+                    <div class="flex gap-4 items-start">
+                        <div class="w-8 h-8 rounded-full bg-dark-900 border border-brand text-brand flex items-center justify-center font-bold flex-shrink-0 mt-0.5">1</div>
+                        <div>
+                            <h4 class="text-lg font-bold text-white">Download from MediaFire</h4>
+                            <p class="text-gray-400 text-sm mt-1 leading-relaxed">Click the "Download APK" button above. You will be redirected to MediaFire. Click the blue <strong>Download</strong> button on their page to save the file.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4 items-start">
+                        <div class="w-8 h-8 rounded-full bg-dark-900 border border-brand text-brand flex items-center justify-center font-bold flex-shrink-0 mt-0.5">2</div>
+                        <div>
+                            <h4 class="text-lg font-bold text-white">Open the APK File</h4>
+                            <p class="text-gray-400 text-sm mt-1 leading-relaxed">Once downloaded, tap the file in your notifications or File Manager to begin installation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4 items-start">
+                        <div class="w-8 h-8 rounded-full bg-dark-900 border border-brand text-brand flex items-center justify-center font-bold flex-shrink-0 mt-0.5">3</div>
+                        <div>
+                            <h4 class="text-lg font-bold text-white">Bypass the Warning & Install</h4>
+                            <p class="text-gray-400 text-sm mt-1 leading-relaxed">Read the important note to the right to complete your installation successfully.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Warning Alert Box -->
+                <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-2xl p-6 relative">
+                    <div class="flex items-center gap-2 mb-3">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#eab308" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                        <h4 class="text-yellow-500 font-bold text-lg">Play Protect Warning</h4>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                        During installation, your phone might show a <strong>"Harmful app"</strong> or <strong>"Unsafe"</strong> popup warning from Google Play Protect.
+                    </p>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                        <strong>Don't worry!</strong> This happens simply because the APK is converted directly from our website and is not officially hosted on the Google Play Store. It is exactly the same as the web version and is <strong>100% safe to use</strong>.
+                    </p>
+                    <div class="bg-dark-900/50 rounded-lg p-3 border border-white/5">
+                        <p class="text-brand font-medium text-sm text-center">
+                            To proceed, tap <strong class="text-white">More details</strong> and select <strong class="text-white">Install anyway</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to use / DNS Setup Section (Crucial) -->
+    <section id="setup" class="py-20 bg-dark-800/50 border-y border-white/5 relative">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Enjoy <span class="text-brand">Ad-Free</span> Streaming</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">Moizflix uses third-party player servers. To block annoying pop-ups and video ads in the App or Website, follow this one-time network trick on your phone.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Visuals -->
+                <div class="glass-card p-8 rounded-3xl relative overflow-hidden border border-white/10">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand/20 blur-[60px] rounded-full"></div>
+                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff2a55" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        Private DNS Setup
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-dark-900 rounded-xl p-4 border border-white/5 flex justify-between items-center">
+                            <span class="text-gray-400 font-medium">Private DNS provider hostname</span>
+                            <div class="w-4 h-4 rounded-full border-4 border-brand"></div>
+                        </div>
+                        <div class="bg-dark-900 rounded-xl p-4 border border-brand/50 ring-1 ring-brand/20 relative">
+                            <span class="text-xs text-brand font-bold absolute -top-2.5 left-4 bg-dark-900 px-2">Enter this exactly</span>
+                            <code class="text-white font-mono text-lg tracking-wider">dns.adguard.com</code>
+                        </div>
+                        <button class="w-full bg-white/10 text-white font-bold py-3 rounded-xl mt-2 cursor-default">Save Settings</button>
+                    </div>
+                </div>
+
+                <!-- Steps -->
+                <div class="space-y-8">
+                    <div class="flex gap-4">
+                        <div class="text-5xl font-extrabold step-number mt-1">1</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-1">Open Device Settings</h4>
+                            <p class="text-gray-400 leading-relaxed">Go to your Android phone's <b>Settings</b> and navigate to <b>Connections</b> or <b>Network & Internet</b>.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4">
+                        <div class="text-5xl font-extrabold step-number mt-1">2</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-1">Find Private DNS</h4>
+                            <p class="text-gray-400 leading-relaxed">Tap on <b>More Connection Settings</b> (if applicable) and select <b>Private DNS</b>.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="text-5xl font-extrabold step-number mt-1">3</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-1">Enter the Hostname</h4>
+                            <p class="text-gray-400 leading-relaxed">Choose <b>"Private DNS provider hostname"</b>, type in <code class="bg-dark-900 px-2 py-1 rounded text-brand font-mono font-bold mx-1 border border-white/10">dns.adguard.com</code>, and tap Save.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-brand/10 border border-brand/20 rounded-2xl p-4 flex gap-3 mt-4">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff2a55" stroke-width="2" class="flex-shrink-0 mt-0.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                        <p class="text-sm text-brand font-medium">Once saved, restart your app/browser. All third-party video ads and pop-ups will be permanently blocked!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">Why use Moizflix?</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto text-lg">Everything you need for the perfect movie night, whether in-browser or on our lightweight App.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- Feature 1 -->
+            <div class="glass-card p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+                <div class="w-14 h-14 bg-dark-900 rounded-2xl flex items-center justify-center mb-6 border border-white/5 text-brand">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Ultra Lightweight</h3>
+                <p class="text-gray-400 font-medium leading-relaxed">No bulky files eating your storage. Moizflix acts like a native app entirely inside your browser cache or via our tiny wrapper APK.</p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="glass-card p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-brand/5 to-transparent opacity-0 hover:opacity-100 transition-opacity"></div>
+                <div class="w-14 h-14 bg-dark-900 rounded-2xl flex items-center justify-center mb-6 border border-white/5 text-blue-500">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Dual-Audio & Dubs</h3>
+                <p class="text-gray-400 font-medium leading-relaxed">Powered by multiple servers like VidLink and SmashyStream, providing multi-language audio and built-in subtitles.</p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="glass-card p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+                <div class="w-14 h-14 bg-dark-900 rounded-2xl flex items-center justify-center mb-6 border border-white/5 text-emerald-500">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Offline Library</h3>
+                <p class="text-gray-400 font-medium leading-relaxed">Create a custom profile, save your favorite movies to your personal library, and never lose track of what to watch next.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA Banner -->
+    <section class="max-w-5xl mx-auto px-6 pb-32">
+        <div class="bg-gradient-to-r from-brand-dark to-brand rounded-3xl p-10 md:p-14 text-center relative overflow-hidden shadow-2xl">
+            <!-- Decorative circles -->
+            <div class="absolute -top-24 -left-24 w-64 h-64 bg-white/10 rounded-full blur-2xl"></div>
+            <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-black/20 rounded-full blur-2xl"></div>
+            
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-4 relative z-10">Ready to start watching?</h2>
+            <p class="text-white/80 text-lg mb-8 max-w-xl mx-auto relative z-10">Ensure your DNS is set to AdGuard, then click the button below to enter the Moizflix Web App instantly.</p>
+            
+            <button onclick="visitWebsite()" class="relative z-10 bg-white text-brand font-extrabold text-lg py-4 px-10 rounded-full shadow-xl hover:scale-105 transition-transform flex items-center justify-center gap-2 mx-auto">
+                <span id="cta-btn-text">Open Moizflix Website</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 bg-dark-900 py-8">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500 font-medium">
+            <div class="flex items-center gap-2">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#ff2a55"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                Moizflix Web App
+            </div>
+            <p>© 2026 Moizflix. All rights reserved. Content provided by 3rd party APIs.</p>
+        </div>
+    </footer>
+
+    <!-- Sticky Mobile CTA (Only shows on scroll on small screens) -->
+    <div id="mobile-cta" class="fixed bottom-0 left-0 w-full p-4 glass-card border-t border-white/10 md:hidden translate-y-full transition-transform duration-300 z-50 flex gap-2">
+        <a href="https://www.mediafire.com/file/sp22qflpdu71a4i/MoizFlix.apk/file" target="_blank" class="bg-dark-700 border border-white/10 text-white p-3.5 rounded-xl flex items-center justify-center">
+             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        </a>
+        <button onclick="visitWebsite()" class="flex-1 bg-brand text-white font-bold text-lg py-3.5 rounded-xl shadow-[0_0_20px_rgba(255,42,85,0.4)] flex items-center justify-center gap-2">
+            Visit Web App <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Redirect logic
+        function visitWebsite() {
+            const btnTexts = document.querySelectorAll('#cta-btn-text');
+            btnTexts.forEach(txt => txt.innerText = "Loading App...");
+            
+            // Visual feedback on all buttons
+            document.querySelectorAll('button').forEach(btn => {
+                if(btn.classList.contains('bg-brand') || btn.classList.contains('bg-white')) {
+                    btn.style.opacity = '0.8';
+                    btn.style.transform = 'scale(0.98)';
+                }
+            });
+
+            // Redirect to the actual Moizflix web app link after a tiny delay
+            setTimeout(() => {
+                window.location.href = "https://moizflix-home.netlify.app/"; 
+            }, 600);
+        }
+
+        // Show sticky mobile CTA on scroll
+        window.addEventListener('scroll', () => {
+            const mobileCta = document.getElementById('mobile-cta');
+            if (window.scrollY > 300) {
+                mobileCta.classList.remove('translate-y-full');
+            } else {
+                mobileCta.classList.add('translate-y-full');
+            }
+        });
+    </script>
+</body>
+</html>
